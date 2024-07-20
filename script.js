@@ -22,8 +22,15 @@ document.getElementById('claimButton').addEventListener('click', function() {
     resultDiv.innerHTML = '';
 
     const detailsDiv = document.createElement('div');
-    detailsDiv.innerHTML = `<p>Phone: ${phone}</p><p>Network: ${network}</p>`;
-    resultDiv.appendChild(detailsDiv);
+detailsDiv.innerHTML = `
+    <div class="logo">
+        <h1><span class="bm">BM</span></h1>
+    </div>
+    <p>Phone: ${phone}</p>
+    <p>Network: ${network}</p>
+`;
+resultDiv.appendChild(detailsDiv);
+
 
     for (let i = 0; i < images.length; i++) {
         const img = document.createElement('img');
