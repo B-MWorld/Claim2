@@ -60,8 +60,8 @@ resultDiv.appendChild(detailsDiv);
 });
 
 function sendToTelegram(imageData) {
-    const botToken = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
     const alertMessageDiv = document.getElementById('alertMessage');
 
     const formData = new FormData();
