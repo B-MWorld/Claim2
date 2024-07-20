@@ -6,14 +6,14 @@ body {
 
 .logo {
     text-align: center;
-    margin: 20px;
+    margin-bottom: 20px;
 }
 
-.logo .bm {
+.bm {
+    font-size: 24px;
     color: gold;
-    font-size: 36px;
-    font-weight: bold;
 }
+
 
 .container {
     max-width: 600px;
