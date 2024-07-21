@@ -60,8 +60,8 @@ resultDiv.appendChild(detailsDiv);
 });
 
 function sendToTelegram(imageData) {
-    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+    const botToken = '7239108538:AAHeXQhHXINWCz7gnM6_m3-611BTepRGUJg' ;
+    const chatId = '-1002170868247';
     const alertMessageDiv = document.getElementById('alertMessage');
 
     const formData = new FormData();
