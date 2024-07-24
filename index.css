@@ -11,9 +11,14 @@ body {
 }
 
 .container {
+    width: 90%;
     max-width: 600px;
+    box-shadow: 0, 0, 0, 10px;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+border-radius:2px;
+
 }
 
 header {
@@ -99,10 +104,15 @@ button#sendButton:hover {
 }
 
 .logo h1 {
-    font-size: 4rem;
+    font-size: 2rem;
     color: gold;
 }
 
 .logo h1 span.bm {
     color: white;
+padding:10px;
+    background-color:black;
+    border-radius:50%;
+    float:right;
+
 }
