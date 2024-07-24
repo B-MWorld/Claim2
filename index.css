@@ -1,61 +1,108 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.logo {
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.bm {
-    font-size: 24px;
+header h1 {
     color: gold;
+    font-size: 2.5rem;
 }
 
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.form-group {
+    margin-bottom: 15px;
 }
 
-h2 {
-    text-align: center;
-    color: gold;
-}
-
-input, select, button {
+.form-group label {
     display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: gold;
+}
+
+.form-group input, .form-group select {
     width: 100%;
-    margin: 10px 0;
     padding: 10px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
 }
 
-button {
+input::placeholder {
+    color: #bbb;
+}
+
+.claim-btn {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: gold;
-    color: black;
+    color: #000;
     border: none;
+    border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: darkgoldenrod;
+.claim-btn:hover {
+    background-color: #d4af37;
 }
 
-#result {
+#alertMessage {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.result {
     margin-top: 20px;
     text-align: center;
 }
 
-#result img {
-    max-width: 100%;
-    margin: 10px 0;
-    background-color:gold;
+.result img {
+    margin: 10px;
+    border: 2px solid gold;
+}
+
+button#sendButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: gold;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#sendButton:hover {
+    background-color: #d4af37;
+}
+
+.logo h1 {
+    font-size: 4rem;
+    color: gold;
+}
+
+.logo h1 span.bm {
+    color: white;
 }
