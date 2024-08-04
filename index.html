@@ -77,7 +77,7 @@
         }
         .copy-btn {
             background-color: Gold;
-            color: #fff;
+            color: black;
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -111,7 +111,7 @@
 
         function copyReferralLink() {
             navigator.clipboard.writeText(referralLink).then(() => {
-                alert('Referral link copied!');
+                
                 document.getElementById('alert').textContent = Copied;
             });
         }
