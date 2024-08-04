@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,3 +39,89 @@
     <script src="script.js"></script>
 </body>
 </html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Overlay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .overlay {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .referral-link {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .copy-btn {
+            background-color: #008CBA;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background-color: #007bb5;
+        }
+        .referral-list {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h2>Referral</h2>
+        <div class="referral-link" id="referralLink"></div>
+        <button class="copy-btn" onclick="copyReferralLink()">Copy</button>
+        <div class="referral-list">
+            <h3>Your Referrals:</h3>
+            <ul id="referralList"></ul>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const referralLink = urlParams.get('referral');
+        const username = urlParams.get('username');
+        document.getElementById('referralLink').textContent = referralLink;
+
+        function copyReferralLink() {
+            navigator.clipboard.writeText(referralLink).then(() => {
+                alert('Referral link copied!');
+            });
+        }
+
+        // Mock data - replace with actual data fetching logic
+        const referralUsernames = ['user1', 'user2', 'user3']; // Example data
+        const referralList = document.getElementById('referralList');
+        referralUsernames.forEach(username => {
+            const li = document.createElement('li');
+            li.textContent = `@${username}`;
+            referralList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+
+
