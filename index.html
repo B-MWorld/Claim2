@@ -66,6 +66,7 @@
             width: 90%;
             max-width: 400px;
             text-align: center;
+            
         }
         .referral-link {
             margin: 20px 0;
@@ -75,15 +76,16 @@
             border-radius: 5px;
         }
         .copy-btn {
-            background-color: #008CBA;
+            background-color: Gold;
             color: #fff;
             padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            border:1px solid black;
         }
         .copy-btn:hover {
-            background-color: #007bb5;
+            opacity: 0.5;
         }
         .referral-list {
             text-align: left;
@@ -95,6 +97,7 @@
         <h2>Referral</h2>
         <div class="referral-link" id="referralLink"></div>
         <button class="copy-btn" onclick="copyReferralLink()">Copy</button>
+        <p id= "alert" ></p>
         <div class="referral-list">
             <h3>Your Referrals:</h3>
             <ul id="referralList"></ul>
@@ -109,6 +112,7 @@
         function copyReferralLink() {
             navigator.clipboard.writeText(referralLink).then(() => {
                 alert('Referral link copied!');
+                document.getElementById('alert').textContent = Copied;
             });
         }
 
