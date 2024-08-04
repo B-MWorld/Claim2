@@ -112,7 +112,7 @@
         function copyReferralLink() {
             navigator.clipboard.writeText(referralLink).then(() => {
                 
-                document.getElementById('alert').textContent = Copied;
+                document.getElementById('alert').innerText = 'Copied';
             });
         }
 
