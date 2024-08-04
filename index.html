@@ -51,33 +51,40 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: black;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            color:white;
         }
         .overlay {
-            background-color: rgba(0, 0, 0, 0.4);
+            position: relative;
+            background-color: black;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             width: 80%;
             max-width: 400px;
             text-align: center;
-            border:1.5px solid Gold;
             color:Gold;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
         }
         .referral-link {
             margin: 20px 0;
             padding: 10px;
             background-color: #f4f4f4;
-            border: 1px solid Gold;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-        
         .copy-btn {
             background-color: Gold;
             color: black;
@@ -85,30 +92,26 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            border:1px solid black;
         }
         .copy-btn:hover {
-            opacity: 0.5;
+            opacity:0.5;
         }
         .referral-list {
             text-align: left;
         }
-        
-        ul:{
-        color:white;
+        .referral-list li {
+            color: white; /* Change the color here */
         }
-
-     
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <h2 class="h2"  >Referral</h2>
+    <div class="overlay" id="overlayBox">
+        <button class="close-btn" onclick="closeOverlay()">X</button>
+        <h2>Referral</h2>
         <div class="referral-link" id="referralLink"></div>
-        <button class="copy-btn" id= "alert"  onclick="copyReferralLink()">Copy</button>
-        
+        <button class="copy-btn" id="alert" onclick="copyReferralLink()">Copy</button>
         <div class="referral-list">
-            <h3 class="h2" >Your Referrals:</h3>
+            <h3>Your Referrals:</h3>
             <ul id="referralList"></ul>
         </div>
     </div>
@@ -120,21 +123,25 @@
 
         function copyReferralLink() {
             navigator.clipboard.writeText(referralLink).then(() => {
-                
-                document.getElementById('alert').innerText = 'Copied';
+                document.getElementById('alert').textContent = 'Copied';
             });
+        }
+
+        function closeOverlay() {
+            document.getElementById('overlayBox').style.display = 'none';
         }
 
         // Mock data - replace with actual data fetching logic
         const referralUsernames = ['user1', 'user2', 'user3']; // Example data
         const referralList = document.getElementById('referralList');
-        referralUsernames.forEach(username => {
+        referralUsernames.forEach(user => {
             const li = document.createElement('li');
-            li.textContent = `@${username}`;
+            li.textContent = `@${user}`;
             referralList.appendChild(li);
         });
     </script>
 </body>
 </html>
+
 
 
