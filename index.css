@@ -203,13 +203,15 @@ button:hover {
     text-align: center;
     color:black;
     background-color:whitesmoke;
-    border-radius:5px;
+    border-radius:7px;
 }
 
 .result-container img.uploaded-image {
     width: 70%;
     height: auto;
     margin: 10px 0;
+    border:1px solid Gold;
+    border-radius:5px;
     
 }
 
