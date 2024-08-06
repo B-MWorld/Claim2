@@ -165,7 +165,7 @@
         <div class="form-container">
             <h1>Claim Your Reward</h1>
             <div class="form-group">
-                <label for="images">Upload Images (up to 20):</label>
+                <label for="images">Upload Images (up to 5):</label>
                 <input type="file" id="images" name="images" multiple>
             </div>
             <div class="form-group">
@@ -175,18 +175,24 @@
             <div class="form-group">
                 <label for="network">Network:</label>
                 <select id="network" name="network">
-                    <option value="MTN">MTN</option>
+                    <option value="MTN">MTN (Recommended)</option>
                     <option value="AIRTEL">AIRTEL</option>
                     <option value="9MOBILE">9MOBILE</option>
                     <option value="GLO">GLO</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="username">Telegram Username (optional):</label>
+                <input type="text" id="username" name="username" placeholder="Your Telegram Username">
             </div>
             <button id="claimButton">Claim</button>
             <div id="alertMessage" class="alert-message"></div>
         </div>
         <div id="result" class="result-container"></div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
+    
