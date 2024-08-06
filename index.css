@@ -218,6 +218,7 @@ button:hover {
 }
 .logo{
     border-top:1.5px solid black;
+    z-index:999;
 }
 
 .logo h1 {
