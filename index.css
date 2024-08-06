@@ -205,6 +205,7 @@ button:hover {
     background-color:whitesmoke;
     border-radius:7px;
     border:1.5px solid Gold;
+    border-bottom:1.5px solid white;
 }
 
 .result-container img.uploaded-image {
