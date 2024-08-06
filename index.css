@@ -205,7 +205,7 @@ button:hover {
     background-color:whitesmoke;
     border-radius:7px;
     border:1.5px solid Gold;
-    border-bottom:1.5px solid white;
+    border-bottom:1.5px solid whitesmoke;
 }
 
 .result-container img.uploaded-image {
@@ -230,6 +230,5 @@ button:hover {
     
     margin:10px
     
-    margin-top:15px;
 }
 
