@@ -200,6 +200,8 @@ button:hover {
 .result-container {
     margin-top: 20px;
     text-align: center;
+    color:black;
+    background-color:Gold;
 }
 
 .result-container img.uploaded-image {
@@ -219,8 +221,8 @@ button:hover {
     background-color:black;
     padding: 5px 10px;
     border-radius: 4px;
-    float:right;
-    margin:15px
+    
+    margin:10px
     border:1px solid Gold;
     
 }
