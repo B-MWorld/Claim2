@@ -162,7 +162,7 @@ body {
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: var(--primary-color);
 }
 
@@ -171,7 +171,7 @@ input[type="text"],
 select {
     width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -185,11 +185,12 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-bottom:4px;
 }
 
 button:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    opacity:0.5;
+    
 }
 
 .alert-message {
@@ -201,7 +202,8 @@ button:hover {
     margin-top: 20px;
     text-align: center;
     color:black;
-    background-color:Gold;
+    background-color:whitesmoke;
+    border-radius:5px;
 }
 
 .result-container img.uploaded-image {
