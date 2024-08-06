@@ -217,7 +217,7 @@ button:hover {
     
 }
 .logo{
-    margin-top:10px;
+    border-top:1.5px solid black;
 }
 
 .logo h1 {
