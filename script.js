@@ -229,6 +229,12 @@ function dataURItoBlob(dataURI) {
 });
 
 
+tg.onEvent('backButtonClicked', function() {
+    const shouldClose = confirm("Changes that you made may not be saved. Are you sure you want to close?");
+    if (shouldClose) {
+        tg.close(); // Close the web app
+    }
+});
 
 
 
