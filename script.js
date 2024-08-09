@@ -284,7 +284,12 @@ document.getElementById("modal-ok").onclick = function() {
   closeModal(); // Close the modal
   // Implement your closing logic here, e.g., tg.close();
 
-    tg.close();
+
+    Const close = document.getElementById("modal-ok");
+    if (close.onclick) {
+                tg.close();
+});
+    
   console.log("Web app closed");
 };
 
