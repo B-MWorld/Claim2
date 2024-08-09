@@ -221,8 +221,8 @@ function dataURItoBlob(dataURI) {
     }
     return new Blob([ab], { type: mimeString });
 }
-
-    */
+*/
+    
     document.addEventListener("DOMContentLoaded", function() {
     Telegram.WebApp.ready(); // Signal to Telegram that the web app is ready
     Telegram.WebApp.expand(); // Expand the web app to use the full height of the screen
@@ -233,10 +233,11 @@ function dataURItoBlob(dataURI) {
         const tg = window.Telegram.WebApp;
         tg.ready();
         tg.BackButton.show();
-*/
+
         tg.onEvent('backButtonClicked', function() {
             onBackButtonClicked(); // Trigger the custom modal
         });
+        */
 
 /*
 
@@ -252,6 +253,11 @@ tg.onEvent('backButtonClicked', function() {
 
 
 
+const tg = window.Telegram.WebApp;
+
+tg.onEvent('backButtonClicked', function() {
+  onBackButtonClicked(); // Trigger the custom modal
+});
 
 
 
