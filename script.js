@@ -242,6 +242,10 @@ function dataURItoBlob(dataURI) {
 
 tg.onEvent('backButtonClicked', function() {
   onBackButtonClicked(); // Trigger the custom modal
+
+    const shouldClose = confirm("Changes that you made may not be saved. Are you sure you want to close?");
+            if (shouldClose) {
+                tg.close();
 });
 
 
