@@ -223,13 +223,11 @@ function dataURItoBlob(dataURI) {
 }
 
     */
-    window.addEventListener('load', () => {
-    document.body.style.height = window.innerHeight + 'px';
+    document.addEventListener("DOMContentLoaded", function() {
+    Telegram.WebApp.ready(); // Signal to Telegram that the web app is ready
+    Telegram.WebApp.expand(); // Expand the web app to use the full height of the screen
 });
 
-window.addEventListener('resize', () => {
-    document.body.style.height = window.innerHeight + 'px';
-});
 
 
 
