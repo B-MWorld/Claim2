@@ -228,6 +228,8 @@ function dataURItoBlob(dataURI) {
     Telegram.WebApp.expand(); // Expand the web app to use the full height of the screen
 });
 
+const tg = window.Telegram.WebApp;
+tg.ready(); // Ensures the Web App is ready to interact
 
 
 
