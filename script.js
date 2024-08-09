@@ -281,11 +281,11 @@ document.getElementById("modal-cancel").onclick = function() {
 
 // Handle the OK button click
 document.getElementById("modal-ok").onclick = function() {
-    tg.close();
+    
   closeModal(); // Close the modal
   // Implement your closing logic here, e.g., tg.close();
 
-
+Telegram.WebApp.close();
     
     
   console.log("Web app closed");
