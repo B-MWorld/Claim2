@@ -293,6 +293,7 @@ button:hover {
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 18px;
+    color:Gold;
 }
 
 /* Message Style */
@@ -302,16 +303,17 @@ button:hover {
 
 /* Buttons Style */
 .modal-buttons button {
-  background-color: #7289DA; /* Telegram-like color */
-  color: white;
+  background-color: black; /* Telegram-like color */
+  color: Gold;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 14px;
+    border:1px solid Gold;
 }
 
 .modal-buttons button:hover {
-  background-color: #99aab5;
+  opacity:0.5;
 }
