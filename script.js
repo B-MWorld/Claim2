@@ -229,28 +229,54 @@ function dataURItoBlob(dataURI) {
 });
 
 const tg = window.Telegram.WebApp;
-tg.ready(); // Ensures the Web App is ready to interact
-
-
-
-tg.BackButton.show(); // Ensure the back button is visible
 
 tg.onEvent('backButtonClicked', function() {
-    if (confirm("Changes that you made may not be saved. Do you want to close anyway?")) {
-        tg.close();  // Close the web app if the user confirms
-    }
+  onBackButtonClicked(); // Trigger the custom modal
 });
 
 
 
 
 
-tg.onEvent('backButtonClicked', function() {
-    const shouldClose = confirm("Changes that you made may not be saved. Are you sure you want to close?");
-    if (shouldClose) {
-        tg.close(); // Close the web app
-    }
-});
+
+
+
+
+
+
+
+// Show the modal
+function showModal() {
+  document.getElementById("custom-modal").style.display = "block";
+}
+
+// Hide the modal
+function closeModal() {
+  document.getElementById("custom-modal").style.display = "none";
+}
+
+// Handle the Cancel button click
+document.getElementById("modal-cancel").onclick = function() {
+  closeModal(); // Close the modal
+};
+
+// Handle the OK button click
+document.getElementById("modal-ok").onclick = function() {
+  closeModal(); // Close the modal
+  // Implement your closing logic here, e.g., tg.close();
+  console.log("Web app closed");
+};
+
+// Example of triggering the modal
+function onBackButtonClicked() {
+  showModal(); // Display the modal when the back button is clicked
+}
+
+
+
+
+
+
 
 
 
