@@ -252,14 +252,13 @@ tg.onEvent('backButtonClicked', function() {
 
 
 
-
+/*
 const tg = window.Telegram.WebApp;
 
 tg.onEvent('backButtonClicked', function() {
   onBackButtonClicked(); // Trigger the custom modal
 });
-
-
+*/
 
 
 
