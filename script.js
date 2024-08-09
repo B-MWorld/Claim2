@@ -285,10 +285,10 @@ document.getElementById("modal-ok").onclick = function() {
   // Implement your closing logic here, e.g., tg.close();
 
 
-    Const close = document.getElementById("modal-ok");
-    if (close.onclick) {
+    Const close = document.getElementById("modal-ok").onclick;
+    if (close) {
                 tg.close();
-});
+};
     
   console.log("Web app closed");
 };
