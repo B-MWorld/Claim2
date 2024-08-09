@@ -229,6 +229,20 @@ function dataURItoBlob(dataURI) {
 });
 
 
+
+
+tg.BackButton.show(); // Ensure the back button is visible
+
+tg.onEvent('backButtonClicked', function() {
+    if (confirm("Changes that you made may not be saved. Do you want to close anyway?")) {
+        tg.close();  // Close the web app if the user confirms
+    }
+});
+
+
+
+
+
 tg.onEvent('backButtonClicked', function() {
     const shouldClose = confirm("Changes that you made may not be saved. Are you sure you want to close?");
     if (shouldClose) {
