@@ -208,6 +208,20 @@
   </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.BackButton.show();
+
+        tg.onEvent('backButtonClicked', function() {
+            const shouldClose = confirm("Changes that you made may not be saved. Are you sure you want to close?");
+            if (shouldClose) {
+                tg.close();
+            }
+        });
+    });
+</script>
 
 
     
