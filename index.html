@@ -210,7 +210,90 @@
   </div>
 </div>
 
+
+
+
+
+
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen">Loading...</div>
+
+    <!-- Error Screen -->
+    <div id="errorScreen">
+        <h1>Error: Network Issue Detected</h1>
+        <p>Please check your connection and try again.</p>
+        <button onclick="window.location.reload();">Refresh</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" style="display:none;">
+        <!-- Your main app content goes here -->
+    </div>
+
+
 <script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-M TaskRewards</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // Initialize Telegram Web App API
+        Telegram.WebApp.ready();
+
+        // Check network status
+        function checkNetwork() {
+            if (!navigator.onLine || Telegram.WebApp.isClosing) {
+                // Show custom error screen
+                document.getElementById('loadingScreen').style.display = 'none';
+                document.getElementById('errorScreen').style.display = 'flex';
+                Telegram.WebApp.close(); // Optionally close the web app
+            } else {
+                // Hide loading screen and show main content
+                document.getElementById('loadingScreen').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                Telegram.WebApp.expand();  // Expand the web app to full height
+            }
+        }
+
+        // Check network status on load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkNetwork();
+
+            // Recheck network status periodically
+            setInterval(checkNetwork, 5000);
+        });
+
+        // Recheck network status when going online
+        window.addEventListener('online', checkNetwork);
+
+        // Show error screen if connection is lost while using the app
+        window.addEventListener('offline', function() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('errorScreen').style.display = 'flex';
+            Telegram.WebApp.close(); // Optionally close the web app
+        });
+
+    
+
+
+
+
+
+
+
+
+    
     document.addEventListener("DOMContentLoaded", function() {
         const tg = window.Telegram.WebApp;
         tg.read
