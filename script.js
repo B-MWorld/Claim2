@@ -228,7 +228,17 @@ function dataURItoBlob(dataURI) {
     Telegram.WebApp.expand(); // Expand the web app to use the full height of the screen
 });
 
-const tg = window.Telegram.WebApp;
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.BackButton.show();
+
+        tg.onEvent('backButtonClicked', function() {
+            onBackButtonClicked(); // Trigger the custom modal
+        });
+    });
+
 
 tg.onEvent('backButtonClicked', function() {
   onBackButtonClicked(); // Trigger the custom modal
