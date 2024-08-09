@@ -258,3 +258,60 @@ button:hover {
     border-top:2.5px solid black;
 }
 
+
+
+
+
+
+/* Modal Background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #2C2F33; /* Dark grey, matching Telegram's default */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 300px; /* Ensure it doesn't get too wide */
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+
+/* Title Style */
+#modal-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Message Style */
+#modal-message {
+  margin-bottom: 20px;
+}
+
+/* Buttons Style */
+.modal-buttons button {
+  background-color: #7289DA; /* Telegram-like color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-buttons button:hover {
+  background-color: #99aab5;
+}
