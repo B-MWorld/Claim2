@@ -228,17 +228,17 @@ function dataURItoBlob(dataURI) {
     Telegram.WebApp.expand(); // Expand the web app to use the full height of the screen
 });
 
-
+/*
     document.addEventListener("DOMContentLoaded", function() {
         const tg = window.Telegram.WebApp;
         tg.ready();
         tg.BackButton.show();
-
+*/
         tg.onEvent('backButtonClicked', function() {
             onBackButtonClicked(); // Trigger the custom modal
         });
-    });
 
+/*
 
 tg.onEvent('backButtonClicked', function() {
   onBackButtonClicked(); // Trigger the custom modal
@@ -247,7 +247,7 @@ tg.onEvent('backButtonClicked', function() {
             if (shouldClose) {
                 tg.close();
 });
-
+*/
 
 
 
@@ -278,6 +278,8 @@ document.getElementById("modal-cancel").onclick = function() {
 document.getElementById("modal-ok").onclick = function() {
   closeModal(); // Close the modal
   // Implement your closing logic here, e.g., tg.close();
+
+    tg.close();
   console.log("Web app closed");
 };
 
