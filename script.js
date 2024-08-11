@@ -392,7 +392,7 @@ function showSendButton(canvas) {
     sendButton.addEventListener('click', () => sendToTelegram(canvas.toDataURL('image/png')));
     resultDiv.appendChild(sendButton);
 }
-
+/*
 function sendToTelegram(imageData) {
     const botToken = '7239108538:AAHeXQhHXINWCz7gnM6_m3-611BTepRGUJg';
     const chatId = '-1002170868247';
@@ -419,7 +419,36 @@ function sendToTelegram(imageData) {
         console.error('Error sending image:', error);
         showAlert('Error sending image.', 'error');
     });
+}  */
+
+
+function sendToTelegram(imageData) {
+    const alertMessageDiv = document.getElementById('alertMessage');
+
+    fetch('/api/telegramProxy', {
+        method: 'POST',
+        body: JSON.stringify({ imageData }),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            showAlert('Image sent successfully!', 'success');
+        } else {
+            showAlert(`Failed to send image: ${data.description}`, 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error sending image:', error);
+        showAlert('Error sending image.', 'error');
+    });
 }
+
+
+
+
+
+
 
 function dataURItoBlob(dataURI) {
     const byteString = atob(dataURI.split(',')[1]);
