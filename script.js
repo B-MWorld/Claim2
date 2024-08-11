@@ -425,7 +425,7 @@ function sendToTelegram(imageData) {
 function sendToTelegram(imageData) {
     const alertMessageDiv = document.getElementById('alertMessage');
 
-    fetch('/api/telegramProxy', {
+    fetch('/telegramProxy', {
         method: 'POST',
         body: JSON.stringify({ imageData }),
         headers: { 'Content-Type': 'application/json' }
