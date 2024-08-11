@@ -392,7 +392,7 @@ function showSendButton(canvas) {
     sendButton.addEventListener('click', () => sendToTelegram(canvas.toDataURL('image/png')));
     resultDiv.appendChild(sendButton);
 }
-/*
+
 function sendToTelegram(imageData) {
     const botToken = '7239108538:AAHeXQhHXINWCz7gnM6_m3-611BTepRGUJg';
     const chatId = '-1002170868247';
@@ -419,9 +419,9 @@ function sendToTelegram(imageData) {
         console.error('Error sending image:', error);
         showAlert('Error sending image.', 'error');
     });
-}  */
+}  
 
-
+/*
 function sendToTelegram(imageData) {
     const alertMessageDiv = document.getElementById('alertMessage');
 
@@ -455,7 +455,7 @@ const formData = new FormData();
         showAlert('Error sending image.', 'error');
     });
 }
-
+*/
 
 
 
